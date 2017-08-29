@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>css3笔记整理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+</head>
+<body>
+<h1><center>CSS3 学习笔记</center></h1>
+<p><br/></p>
+<h2><center>目录</center></h2>
+<h3>第1章 CSS3简介</h3>
+<pre><code>1.1 CSS3的现状 
+1.2 如何对待    
+</code></pre>
+
+<h3>第2章 准备工作</h3>
+<pre><code>2.1 统一环境    
+2.1 如何使用手册  
+</code></pre>
+
+<h3>第3章 基础知识</h3>
+<pre><code>3.1 选择器 
+    3.1.1   属性选择器   
+    3.1.2   伪类选择器   
+    3.1.3   伪元素选择器  
+3.2 颜色  
+3.3 文本  
+3.4 边框  
+    3.4.1   边框圆角    
+    3.4.2   边框图片    
+    3.4.3   边框阴影    
+3.5 盒模型 
+3.6 背景  
+3.7 渐变  
+    3.7.1   线性渐变    
+    3.7.2   径向渐变    
+3.8 2D转换    
+3.9 过渡  
+3.10    3D转换    
+3.11    动画  
+3.12    伸缩布局    
+3.13    多列布局    
+</code></pre>
+
+<h3>第4章 Web字体</h3>
+<pre><code>4.1 字体格式    
+4.2 字体图标    
+</code></pre>
+
+<h3>第5章 兼容性</h3>
+<h3>第6章 高级应用</h3>
+<p><br/></p>
+<hr/>
+<p><br/>
+<br/></p>
+<h2>第1章CSS3简介</h2>
+<pre><code>如同人类的的进化一样，CSS3是CSS2的“进化”版本，在CSS2基础上，增强或新增了许多特性， 弥补了CSS2的众多不足之处，使得Web开发变得更为高效和便捷。
+</code></pre>
+
+<h3>1.1CSS3的现状</h3>
+<pre><code>1、浏览器支持程度差，需要添加私有前缀
+
+2、移动端支持优于PC端
+
+3、不断改进中
+
+4、应用相对广泛
+</code></pre>
+
+<h3>1.2如何对待</h3>
+<pre><code>1、坚持渐进增强原则
+
+2、考虑用户群体
+
+3、遵照产品的方案
+
+4、听Boss的
+</code></pre>
+
+<h2>第2章准备工作</h2>
+<h3>2.1统一环境</h3>
+<blockquote>
+<p>由于CSS3兼容性问题的普遍存在，为了避免因兼容性带来的干扰，我们约定统一的环境，以保证学习的效率，在最后会单独说明兼容性的问题。</p>
+</blockquote>
+<pre><code>1、Chrome浏览器 version 46+
+
+2、Firefox浏览器 firefox 42+
+
+3、PhotoShop CS6（建议）
+</code></pre>
+
+<h3>2.2如何使用手册</h3>
+<blockquote>
+<p>学会使用工具，可以让我们事半功倍。</p>
+</blockquote>
+<pre><code>[]      表示全部可选项
+||      表示或者
+|       表示多选一
+？   表示0个或者1个
+*       表示0个或者多个
+{}      表示范围
+</code></pre>
+
+<blockquote>
+<p>学会查看手册，培养自主学习能力。</p>
+</blockquote>
+<h2>第3章基础知识</h2>
+<h3>3.1选择器</h3>
+<blockquote>
+<p>CSS3新增了许多灵活查找元素的方法，极大的提高了查找元素的效率和精准度。CSS3选择器与jQuery中所提供的绝大部分选择器兼容。</p>
+</blockquote>
+<h4>3.1.1属性选择器</h4>
+<blockquote>
+<p>其特点是通过属性来选择元素，具体有以下5种形式：</p>
+</blockquote>
+<pre><code>1、E[attr] 表示存在attr属性即可；
+
+2、E[attr=val] 表示属性值完全等于val；
+
+3、E[attr*=val] 表示的属性值里包含val字符并且在“任意”位置；
+
+4、E[attr^=val] 表示的属性值里包含val字符并且在“开始”位置；
+
+5、E[attr$=val] 表示的属性值里包含val字符并且在“结束”位置；
+</code></pre>
+
+<h4>3.1.2伪类选择器</h4>
+<blockquote>
+<p>除了以前学过的:link、:active、:visited、:hover，CSS3又新增了其它的伪类选择器。</p>
+</blockquote>
+<pre><code>1、以某元素相对于其父元素或兄弟元素的位置来获取无素的结构伪类。
+</code></pre>
+
+<blockquote>
+<p>重点理解通过E来确定元素的父元素。</p>
+</blockquote>
+<pre><code>    E:first-child第一个子元素
+    E:last-child最后一个子元素
+    E:nth-child(n) 第n个子元素，计算方法是E元素的全部兄弟元素；
+    E:nth-last-child(n) 同E:nth-child(n) 相似，只是倒着计算；
+    n遵循线性变化，其取值0、1、2、3、4、... 但是当n&lt;=0时，选取无效。
+    n可是多种形式：nth-child(2n)、nth-child(2n+1)、nth-child(-1n+5)等；
+    E:empty 选中没有任何子节点的E元素；（使用不是非常广泛）
+2、目标伪类
+    E:target 结合锚点进行使用，处于当前锚点的元素会被选中；
+    3.1.3伪元素选择器
+    E::first-letter文本的第一个单词或字（如中文、日文、韩文等）；
+    E::first-line 文本第一行；
+</code></pre>
+
+<blockquote>
+<p>重点：E::before、E::after是一个行内元素，需要转换成块元素</p>
+</blockquote>
+<pre><code>    E:after、E:before 在旧版本里是伪类，在新版本里是伪元素，新版本下E:after、E:before会被自动识别为E::after、E::before，按伪元素来对待，这样做的目的是用来做兼容处理。
+    E:after、E:before后面的练习中会反复用到，目前只需要有个大致了解
+    E::selection 可改变选中文本的样式；
+    &quot;:&quot; 与 &quot;::&quot; 区别在于区分伪类和伪元素
+</code></pre>
+
+<h3>3.2颜色</h3>
+<blockquote>
+<p>新增了RGBA、HSLA模式，其中的A 表示透明度通道，即可以设置颜色值的透明度，相较opacity，它们不具有继承性，即不会影响子元素的透明度。</p>
+</blockquote>
+<pre><code>Red、Green、Blue、Alpha即RGBA
+Hue、Saturation、Lightness、Alpha即HSLA
+R、G、B 取值范围0~255
+H 色调 取值范围0~360，0/360表示红色、120表示绿色、240表示蓝色
+S 饱和度 取值范围0%~100%
+L 亮度 取值范围0%~100%
+A 透明度 取值范围0~1
+</code></pre>
+
+<blockquote>
+<p>关于透明度：</p>
+<blockquote>
+<p>1、opacity只能针对整个盒子设置透明度，子盒子及内容会继承父盒子的透明度；</p>
+<p>2 、transparent 不可调节透明度，始终完全透明</p>
+</blockquote>
+</blockquote>
+<pre><code>RGBA、HSLA可应用于所有使用颜色的地方。
+</code></pre>
+
+<h3>3.3文本</h3>
+<blockquote>
+<p>text-shadow，可分别设置偏移量、模糊度、颜色（可设透明度）。</p>
+</blockquote>
+<pre><code>1、水平偏移量 正值向右 负值向左；
+2、垂直偏移量 正值向下 负值向上；
+3、模糊度是不能为负值；
+</code></pre>
+
+<h3>3.4边框</h3>
+<blockquote>
+<p>其中边框圆角、边框阴影属性，应用十分广泛，兼容性也相对较好，具有符合渐进增强原则的特征，我们需要重点掌握。</p>
+</blockquote>
+<h4>3.4.1边框圆角</h4>
+<pre><code>border-radius
+圆角处理时，脑中要形成圆、圆心、横轴、纵轴的概念，正圆是椭圆的一种特殊情况。如下图
+</code></pre>
+
+<p><img src="img/圆角_01.png" alt="边框圆角" /></p>
+<pre><code>可分别设置长、短半径，以“/”进行分隔，遵循“1，2，3，4”规则，“/”前面的1~4个用来设置横轴半径（分别对应横轴1、2、3、4位置 ），“/”后面1~4个参数用来设置纵轴半径（分别对应纵轴1、2、3、4位置 ）
+</code></pre>
+
+<h4>3.4.2边框阴影</h4>
+<blockquote>
+<p>box-shadow</p>
+</blockquote>
+<pre><code>1、水平偏移量 正值向右 负值向左；
+2、垂直偏移量 正值向下 负值向上；
+3、模糊度是不能为负值；
+4、inset可以设置内阴影；
+</code></pre>
+
+<blockquote>
+<p>设置边框阴影不会改变盒子的大小，即不会影响其兄弟元素的布局。
+可以设置多重边框阴影，实现更好的效果，增强立体感。</p>
+</blockquote>
+<h4>3.4.3边框图片</h4>
+<p>border-image
+设置的图片将会被“切割”成九宫格形式，然后进行设置。如下图</p>
+<p><img src="img/圆角_02.png" alt="边框图片" /></p>
+<p>“切割”完成后生成虚拟的9块图形，然后按对应位置设置背景，
+其中四个角位置、形状保持不变，中心位置水平垂直两个方向平铺。如下图</p>
+<p><img src="img/边框图片_03.png" alt="边框图片" /></p>
+<pre><code>1、round和repeat之间的区别
+    round 会自动调整尺寸，完整显示边框图片。
+</code></pre>
+
+<p><img src="img/图边框图片_04.png" alt="边框图片" />	
+		repeat 单纯平铺多余部分，会被“裁切”而不能完整显示。
+<img src="img/边框图片_05.png" alt="边框图片" /></p>
+<pre><code>2、更改裁切尺寸
+    background-slice: 34 36 27 27 分别设置裁切如下图
+</code></pre>
+
+<p><img src="img/边框图片_06.png" alt="边框图片" />
+<img src="img/边框图片_07.png" alt="边框图片" /></p>
+<blockquote>
+<p>关于边框图片重点理解9宫格的裁切及平铺方式，实际开发中应用不广泛，但是如能灵活动用会给我们带来不少便利。</p>
+</blockquote>
+<h3>3.5盒模型</h3>
+<p>CSS3中可以通过box-sizing 来指定盒模型，即可指定为content-box、border-box，这样我们计算盒子大小的方式就发生了改变。
+可以分成两种情况：
+	1、box-sizing: border-box  计算方式为width = border + padding + content
+	2、box-sizing: content-box  计算方式为width = content</p>
+<blockquote>
+<p>兼容性比较好</p>
+</blockquote>
+<h3>3.6背景</h3>
+<p>背景在CSS3中也得到很大程度的增强，比如背景图片尺寸、背景裁切区域、背景定位参照点、多重背景等。</p>
+<h4>1、background-size设置背景图片的尺寸</h4>
+<pre><code>cover会自动调整缩放比例，保证图片始终填充满背景区域，如有溢出部分则会被隐藏。
+contain会自动调整缩放比例，保证图片始终完整显示在背景区域。
+也可以使用长度单位或百分比 
+</code></pre>
+
+<h4>2、background-origin设置背景定位的原点</h4>
+<pre><code>border-box以边框做为参考原点；
+padding-box以内边距做为参考原点；
+content-box以内容区做为参考点；
+</code></pre>
+
+<h4>3、background-clip设置背景区域裁切</h4>
+<pre><code>border-box裁切边框以内为背景区域；
+padding-box裁切内边距以内为背景区域；
+content-box裁切内容区做为背景区域；
+</code></pre>
+
+<h4>4、以逗号分隔可以设置多背景，可用于自适应局</h4>
+<pre><code>背景图片尺寸在实际开发中应用十分广泛。
+</code></pre>
+
+<h3>3.7渐变</h3>
+<p>渐变是CSS3当中比较丰富多彩的一个特性，通过渐变我们可以实现许多炫丽的效果，有效的减少图片的使用数量，并且具有很强的适应性和可扩展性。
+可分为线性渐变、径向渐变</p>
+<h4>3.7.1线性渐变</h4>
+<pre><code>linear-gradient线性渐变指沿着某条直线朝一个方向产生渐变效果。
+</code></pre>
+
+<p><img src="img/线性渐变_01.png" alt="线性渐变" /></p>
+<p>上图是从黄色渐变到绿色</p>
+<pre><code>1、必要的元素：
+    a、方向
+    b、起始颜色
+    c、终止色；
+
+2、关于方向如下图
+</code></pre>
+
+<p><img src="img/线性渐变_02.png" alt="线性渐变" /></p>
+<h4>3.7.2径向渐变</h4>
+<pre><code>radial-gradient径向渐变指从一个中心点开始沿着四周产生渐变效果
+</code></pre>
+
+<p><img src="img/径向渐变_01.png" alt="径向渐变" /></p>
+<pre><code>1、必要的元素：
+    a、辐射范围即圆半径 
+    b、中心点 即圆的中心
+    c、渐变起始色
+    d、渐变终止色
+
+2、关于中心点：中心位置参照的是盒子的左上角
+
+3、关于辐射范围：其半径可以不等，即可以是椭圆
+</code></pre>
+
+<h4>3.8过渡</h4>
+<pre><code>过渡是CSS3中具有颠覆性的特征之一，可以实现元素不同状态间的平滑过渡（补间动画），经常用来制作动画效果。
+</code></pre>
+
+<blockquote>
+<p>帧动画：通过一帧一帧的画面按照固定顺序和速度播放。如电影胶片</p>
+</blockquote>
+<p><img src="img/过渡_01.png" alt="过渡" /></p>
+<pre><code>补间动画：自动完成从起始状态到终止状态的的过渡。
+关于补间动画更多学习可查看http://mux.alimama.com/posts/1009
+</code></pre>
+
+<blockquote>
+<p>特点：当前元素只要有“属性”发生变化时，可以平滑的进行过渡。</p>
+<blockquote>
+<p>transition-property设置过渡属性</p>
+<p>transition-duration设置过渡时间</p>
+<p>transition-timing-function设置过渡速度</p>
+<p>transition-delay设置过渡延时</p>
+</blockquote>
+<p>以上四属性重在理解</p>
+</blockquote>
+<h4>3.9 2D转换</h4>
+<pre><code>转换是CSS3中具有颠覆性的特征之一，可以实现元素的位移、旋转、变形、缩放，甚至支持矩阵方式，配合即将学习的过渡和动画知识，可以取代大量之前只能靠Flash才可以实现的效果。
+
+1、移动 translate(x, y) 可以改变元素的位置，x、y可为负值；
+2、缩放 scale(x, y) 可以对元素进行水平和垂直方向的缩放，x、y的取值可为小数，不可为负值；
+4、旋转 rotate(deg) 可以对元素进行旋转，正值为顺时针，负值为逆时针；
+5、倾斜 skew(deg, deg) 可以使元素按一定的角度进行倾斜
+</code></pre>
+
+<h4>3.10 3D转换</h4>
+<pre><code>1、3D坐标轴
+    用X、Y、Z分别表示空间的3个维度，三条轴互相垂直。如下图
+</code></pre>
+
+<p><img src="img/3D坐标轴_01.png" alt="3D坐标轴" /></p>
+<pre><code>2、左手坐标系
+    伸出左手，让拇指和食指成“L”形，大拇指向右，食指向上，中指指向前方。这样我们就建立了一个左手坐标系，拇指、食指和中指分别代表X、Y、Z轴的正方向。如下图
+</code></pre>
+
+<p><img src="img/3D坐标轴_02.png" alt="3D坐标轴" /></p>
+<pre><code>3、左手法则
+    左手握住旋转轴，竖起拇指指向旋转轴正方向，正向就是其余手指卷曲的方向。
+</code></pre>
+
+<h4>3.11 动画</h4>
+<p>动画是CSS3中具有颠覆性的特征之一，可通过设置多个节点来精确控制一个或一组动画，常用来实现复杂的动画效果。
+	1、必要元素：
+		a、通过@keyframes指定动画序列；
+		b、通过百分比将动画序列分割成多个节点；
+		c、在各节点中分别定义各属性
+		d、通过animation将动画应用于相应元素；</p>
+<pre><code>2、关键属性
+    a、animation-name设置动画序列名称
+    b、animation-duration动画持续时间
+    c、animation-delay动画延时时间
+    d、animation-timing-function动画执行速度，linear、ease等
+    e、animation-play-state动画播放状态，play、paused等
+    f、animation-direction动画逆播，alternate等
+    g、animation-fill-mode动画执行完毕后状态，forwards、backwards等
+    h、animation-iteration-count动画执行次数，inifinate等
+</code></pre>
+
+<h4>3.12伸缩布局</h4>
+<p>CSS3在布局方面做了非常大的改进，使得我们对块级元素的布局排列变得十分灵活，适应性非常强，其强大的伸缩性，在响应式开中可以发挥极大的作用。
+	如下图，学习新的概念：
+		主轴：Flex容器的主轴主要用来配置Flex项目，默认是水平方向
+		侧轴：与主轴垂直的轴称作侧轴，默认是垂直方向的
+		方向：默认主轴从左向右，侧轴默认从上到下
+		主轴和侧轴并不是固定不变的，通过flex-direction可以互换。
+<img src="img/伸缩布局_01.png" alt="伸缩布局" /></p>
+<pre><code>1、必要元素：
+a、指定一个盒子为伸缩盒子 display: flex
+b、设置属性来调整此盒的子元素的布局方式 例如 flex-direction
+c、明确主侧轴及方向
+d、可互换主侧轴，也可改变方向
+
+2、各属性详解
+    a、flex-direction调整主轴方向（默认为水平方向）
+    b、justify-content调整主轴对齐
+    c、align-items调整侧轴对齐
+    d、flex-wrap控制是否换行
+    e、align-content堆栈（由flex-wrap产生的独立行）对齐
+    f、flex-flow是flex-direction、flex-wrap的简写形式
+    g、flex控制子项目的缩放比例
+    h、order控制子项目的排列顺序
+</code></pre>
+
+<blockquote>
+<p>此知识点重在理解，要明确找出主轴、侧轴、方向，各属性对应的属性值可参考示例源码</p>
+</blockquote>
+<h4>3.13多列布局</h4>
+<p>类似报纸或杂志中的排版方式，上要用以控制大篇幅文本。</p>
+<p>了解即可，实际意义不大。</p>
+<h2>第4章 Web字体</h2>
+<p>开发人员可以为自已的网页指定特殊的字体，无需考虑用户电脑上是否安装了此特殊字体，从此把特殊字体处理成图片的时代便成为了过去。
+支持程度比较好，甚至IE低版本浏览器也能支持。</p>
+<h3>4.1字体格式</h3>
+<p>不同浏览器所支持的字体格式是不一样的，我们有必要了解一下有关字体格式的知识。</p>
+<h4>1、TureTpe(.ttf)格式</h4>
+<pre><code>.ttf字体是Windows和Mac的最常见的字体，是一种RAW格式，支持这种字体的浏览器有IE9+、Firefox3.5+、Chrome4+、Safari3+、Opera10+、iOS Mobile、Safari4.2+；
+</code></pre>
+
+<h4>2、OpenType(.otf)格式</h4>
+<pre><code>.otf字体被认为是一种原始的字体格式，其内置在TureType的基础上，支持这种字体的浏览器有Firefox3.5+、Chrome4.0+、Safari3.1+、Opera10.0+、iOS Mobile、Safari4.2+；
+</code></pre>
+
+<h4>3、Web Open Font Format(.woff)格式</h4>
+<pre><code>woff字体是Web字体中最佳格式，他是一个开放的TrueType/OpenType的压缩版本，同时也支持元数据包的分离，支持这种字体的浏览器有IE9+、Firefox3.5+、Chrome6+、Safari3.6+、Opera11.1+；
+</code></pre>
+
+<h4>4、Embedded Open Type(.eot)格式</h4>
+<pre><code>.eot字体是IE专用字体，可以从TrueType创建此格式字体，支持这种字体的浏览器有IE4+；
+</code></pre>
+
+<h4>5、SVG(.svg)格式</h4>
+<pre><code>.svg字体是基于SVG字体渲染的一种格式，支持这种字体的浏览器有Chrome4+、Safari3.1+、Opera10.0+、iOS Mobile Safari3.2+；
+</code></pre>
+
+<blockquote>
+<p>了解了上面的知识后，我们就需要为不同的浏览器准备不同格式的字体，通常我们会通过字体生成工具帮我们生成各种格式的字体，因此无需过于在意字体格式间的区别差异。</p>
+<blockquote>
+<p>推荐http://www.zhaozi.cn/、http://www.youziku.com/ 查找更多中文字体</p>
+</blockquote>
+</blockquote>
+<h3>4.2字体图标</h3>
+<p>其实我们可以把文字理解成是一种特殊形状的图片，反之我们是不是也可以把图片制作成字体呢？
+答案是肯定的。
+常见的是把网页常用的一些小的图标，借助工具帮我们生成一个字体包，然后就可以像使用文字一样使用图标了。</p>
+<blockquote>
+<p>优点：</p>
+<blockquote>
+<p>1、将所有图标打包成字体库，减少请求；
+2、具有矢量性，可保证清晰度；
+3、使用灵活，便于维护；</p>
+</blockquote>
+</blockquote>
+<pre><code>Font Awesome 使用介绍
+    http://fontawesome.dashgame.com/
+
+定制自已的字体图标库
+    http://iconfont.cn/
+    https://icomoon.io/
+
+SVG素材
+    http://www.iconsvg.com/
+</code></pre>
+
+<h2>第5章兼容性</h2>
+<p>通过http://caniuse.com/ 可查询CSS3各特性的支持程度，一般兼容性处理的常见方法是为属性添加私有前缀，如不能解决，应避免使用，无需刻意去处理CSS3的兼容性问题。</p>
+<h2>第6章高级应用</h2>
+
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->
